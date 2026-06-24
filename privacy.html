@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dropwright Privacy Policy</title>
+  <title>Color Drift Gate Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Color Drift Gate.">
   <style>
     :root {
       color-scheme: light;
-      --bg: #f7f3e8;
-      --ink: #24211c;
-      --muted: #625d53;
-      --line: #d8cbb4;
-      --panel: #fffaf0;
-      --accent: #195667;
+      --ink: #1c2430;
+      --muted: #5f6b7a;
+      --line: #d9e1eb;
+      --bg: #f7f9fc;
+      --panel: #ffffff;
+      --accent: #2d7ff9;
     }
 
     * {
@@ -27,28 +28,30 @@
       background: var(--bg);
     }
 
-    main {
-      max-width: 900px;
+    header,
+    main,
+    footer {
+      width: min(900px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 44px 22px;
     }
 
     header {
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 24px;
-      margin-bottom: 28px;
+      padding: 56px 0 24px;
+    }
+
+    main {
+      padding-bottom: 48px;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 6vw, 3.6rem);
-      line-height: 1.05;
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
     }
 
     h2 {
-      margin: 30px 0 10px;
+      margin: 28px 0 10px;
       font-size: 1.35rem;
-      color: var(--accent);
     }
 
     p {
@@ -56,101 +59,86 @@
     }
 
     ul {
-      margin: 8px 0 16px;
+      margin: 0 0 18px;
       padding-left: 20px;
     }
 
     li {
-      margin: 7px 0;
+      margin: 8px 0;
     }
 
-    .notice {
+    .panel {
+      background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--panel);
-      padding: 16px;
+      padding: 28px;
+    }
+
+    .muted {
+      color: var(--muted);
     }
 
     a {
       color: var(--accent);
     }
+
+    footer {
+      padding: 0 0 36px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Privacy Policy</h1>
+    <p class="muted">Color Drift Gate</p>
+    <p class="muted">Effective date: June 24, 2026</p>
+  </header>
+
   <main>
-    <header>
-      <h1>Dropwright Privacy Policy</h1>
-      <p>Effective date: June 24, 2026</p>
-      <p>Developer contact: <a href="mailto:hengbozail@163.com">hengbozail@163.com</a></p>
-    </header>
+    <div class="panel">
+      <p>This Privacy Policy explains how Color Drift Gate handles information. The game is designed as an offline puzzle experience with local progress storage and ad-supported monetization.</p>
 
-    <section>
-      <h2>Overview</h2>
-      <p>Dropwright is an offline physics puzzle game. Core gameplay, level progress, settings, audio preferences, and stars are stored locally on your device so the game can remember your progress and preferences.</p>
-      <p>This policy explains what information may be processed by the app and by integrated third-party services used for advertising, app security, and related technical operation.</p>
-    </section>
+      <h2>Developer Contact</h2>
+      <p>Developer account and support email: <a href="mailto:hengbozail@163.com">hengbozail@163.com</a>.</p>
 
-    <section>
       <h2>Information Stored on Your Device</h2>
-      <p>The app may store the following information locally:</p>
-      <ul>
-        <li>Current level, unlocked levels, stars, and puzzle progress.</li>
-        <li>Music, sound, vibration, and other game settings.</li>
-        <li>Temporary gameplay state used for retrying or adjusting a level.</li>
-      </ul>
-      <p>This local gameplay data is used only to operate the game experience on your device.</p>
-    </section>
+      <p>Color Drift Gate stores gameplay and preference data locally on your device, including completed levels, best star ratings, and music or sound settings. This information is used to restore your progress and settings. The game does not require account registration.</p>
 
-    <section>
-      <h2>Advertising and Tracking Permission</h2>
-      <p>Dropwright includes advertising SDK integrations. The app asks for App Tracking Transparency permission before accessing the device advertising identifier on supported iOS versions. If you allow tracking, the advertising identifier may be used to deliver and measure ads. If you decline, the app continues to work, and ads may be less personalized.</p>
-      <p>The app code includes integrations for Chartboost, Yandex Mobile Ads, Vungle Ads, and InMobi SDK. These third-party providers may process information such as advertising identifiers, device information, app interactions, ad impressions, ad clicks, and network information according to their own privacy policies.</p>
-    </section>
+      <h2>Advertising and App Tracking Transparency</h2>
+      <p>The app may show rewarded or interstitial advertising through third-party advertising SDKs. Before advertising SDK setup, the app requests permission through Apple's App Tracking Transparency framework when required by iOS. If you deny tracking permission, the game still works, and ads may be less personalized.</p>
+      <p>The current app build includes advertising SDK integrations for Chartboost, Yandex Mobile Ads, Vungle, and InMobi. The app retrieves dynamic ad configuration for the app bundle identifier and only activates supported ad platforms when valid configuration is returned.</p>
 
-    <section>
-      <h2>Ad Configuration Requests</h2>
-      <p>The app may request advertising configuration from a remote endpoint using the app bundle identifier. This allows the app to decide which supported ad platforms and ad units are active. The request is used for ad setup and does not contain your puzzle progress.</p>
-    </section>
+      <h2>Device Identifiers</h2>
+      <p>If tracking permission is granted, the app may access the Identifier for Advertisers (IDFA) for advertising purposes. The app may also use Apple's Identifier for Vendor (IDFV) when initializing security-related services. These identifiers are handled according to Apple's platform rules and the policies of the relevant SDK providers.</p>
 
-    <section>
       <h2>Security SDK</h2>
-      <p>Dropwright includes HSSecurity for app security and integrity support. On supported device builds, this SDK may use technical identifiers such as the app bundle identifier and vendor identifier to initialize security services and help protect the app environment.</p>
-    </section>
+      <p>The app includes HSSecurity.framework. After the tracking permission flow finishes, the app initializes this security SDK on supported device builds. The SDK is used for app security and integrity-related functions.</p>
 
-    <section>
-      <h2>Analytics and Diagnostics</h2>
-      <p>Third-party SDKs included for advertising or app operation may collect diagnostic, performance, crash, or event data as part of their services. Dropwright does not require you to create an account and does not ask you to provide a name, email address, phone number, or address inside the game.</p>
-    </section>
+      <h2>Third-Party Services</h2>
+      <p>Third-party advertising and security SDKs may process device, advertising, diagnostic, or interaction data according to their own privacy policies. These services may use network access to request ad configuration, load ads, report ad delivery, prevent abuse, or support SDK functionality.</p>
 
-    <section>
       <h2>Children's Privacy</h2>
-      <p>Dropwright is a general-audience game and does not knowingly request personal information directly from children. If you believe a child has provided personal information through support contact, please email the developer so the information can be deleted.</p>
-    </section>
+      <p>Color Drift Gate does not knowingly collect personal information from children. If you believe that a child has provided personal information through the app, contact us so we can review the issue.</p>
 
-    <section>
-      <h2>Data Sharing</h2>
-      <p>The developer does not sell personal information directly. Information may be processed by third-party advertising, security, and technical service providers as described above, where those services are integrated into the app.</p>
-    </section>
-
-    <section>
       <h2>Your Choices</h2>
       <ul>
-        <li>You can allow or deny tracking through the iOS App Tracking Transparency prompt.</li>
+        <li>You can allow or deny tracking permission in the iOS App Tracking Transparency prompt.</li>
         <li>You can change tracking permission later in iOS Settings.</li>
-        <li>You can reset local game progress from the app if the feature is available in your version.</li>
-        <li>You can delete the app to remove local game data from your device.</li>
+        <li>You can delete the app to remove locally stored game progress and settings from the device.</li>
       </ul>
-    </section>
 
-    <section>
+      <h2>Changes to This Policy</h2>
+      <p>This policy may be updated when app features, SDK integrations, or legal requirements change. The effective date above will be updated when a new version is published.</p>
+
       <h2>Contact</h2>
-      <p>For privacy questions, support requests, or deletion requests related to information you sent directly by email, contact: <a href="mailto:hengbozail@163.com">hengbozail@163.com</a>.</p>
-    </section>
-
-    <section class="notice">
-      <h2>Policy Updates</h2>
-      <p>This privacy policy may be updated when the app changes. The updated version will be posted on this page with a new effective date.</p>
-    </section>
+      <p>For privacy questions, contact <a href="mailto:hengbozail@163.com">hengbozail@163.com</a>.</p>
+    </div>
   </main>
+
+  <footer>
+    <p>Copyright (c) 2026 hengbozail@163.com. All rights reserved.</p>
+  </footer>
 </body>
 </html>

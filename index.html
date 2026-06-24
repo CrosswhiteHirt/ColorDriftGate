@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dropwright</title>
+  <title>Color Drift Gate</title>
+  <meta name="description" content="Color Drift Gate is a swipe-based color puzzle game for iPhone and iPad.">
   <style>
     :root {
       color-scheme: light;
-      --bg: #f7f3e8;
-      --ink: #24211c;
-      --muted: #625d53;
-      --panel: #fffaf0;
-      --line: #d8cbb4;
-      --accent: #2f7d8f;
-      --accent-dark: #195667;
+      --ink: #1b2533;
+      --muted: #5d6878;
+      --line: #d8e0ea;
+      --panel: #ffffff;
+      --bg: #f4f8fc;
+      --blue: #2d7ff9;
+      --green: #21a67a;
+      --yellow: #f2b632;
+      --red: #f45a62;
     }
 
     * {
@@ -28,150 +31,150 @@
       background: var(--bg);
     }
 
-    main {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 48px 22px;
-    }
-
-    .hero {
-      padding: 42px 0 34px;
+    header {
+      padding: 72px 20px 56px;
+      text-align: center;
+      background:
+        linear-gradient(90deg, rgba(45, 127, 249, 0.14), rgba(33, 166, 122, 0.14)),
+        #ffffff;
       border-bottom: 1px solid var(--line);
     }
 
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--accent-dark);
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: 0.82rem;
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 56px;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(2.4rem, 7vw, 4.8rem);
-      line-height: 1;
-    }
-
-    .lead {
-      max-width: 720px;
-      margin: 22px 0 0;
-      font-size: 1.18rem;
-      color: var(--muted);
-    }
-
-    section {
-      padding: 34px 0;
-      border-bottom: 1px solid var(--line);
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
     }
 
     h2 {
       margin: 0 0 14px;
-      font-size: 1.65rem;
+      font-size: 1.45rem;
     }
 
     p {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      padding: 18px;
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1rem;
-      color: var(--accent-dark);
-    }
-
-    .card p {
-      margin: 0;
+    .tagline {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.15rem;
       color: var(--muted);
     }
 
+    section {
+      margin: 0 0 28px;
+      padding: 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .gate-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .gate {
+      min-height: 82px;
+      padding: 14px;
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .blue { background: var(--blue); }
+    .green { background: var(--green); }
+    .yellow { background: var(--yellow); color: #2a2100; }
+    .red { background: var(--red); }
+
     ul {
+      margin: 0;
       padding-left: 20px;
-      margin: 12px 0 0;
     }
 
     li {
       margin: 8px 0;
     }
 
-    a {
-      color: var(--accent);
-    }
-
     footer {
-      padding-top: 28px;
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 0 0 36px;
       color: var(--muted);
       font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--blue);
+    }
+
+    @media (max-width: 680px) {
+      header {
+        padding: 52px 18px 40px;
+      }
+
+      section {
+        padding: 22px;
+      }
+
+      .gate-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Color Drift Gate</h1>
+    <p class="tagline">Swipe blocks toward colorful gates, clear matching edges, and solve each timed puzzle before the board fills your focus.</p>
+  </header>
+
   <main>
-    <header class="hero">
-      <p class="eyebrow">Portrait physics puzzle</p>
-      <h1>Dropwright</h1>
-      <p class="lead">Build a clever path, rotate toy mechanisms, and release the ball into a bright mechanical lab full of gravity, bounce, friction, and timing puzzles.</p>
-    </header>
-
-    <section aria-labelledby="about-title">
-      <h2 id="about-title">About the Game</h2>
-      <p>Dropwright is a single-player physics puzzle game for iPhone and iPad. Each level begins paused: the ball waits at the start point while you arrange the available components inside the play area.</p>
-      <p>When your machine looks ready, press Start. The parts lock in place, the ball drops, and the solution is judged by real-time physics. A good answer is not just correct; it is stable, efficient, and satisfying to watch.</p>
-    </section>
-
-    <section aria-labelledby="play-title">
-      <h2 id="play-title">How It Plays</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Plan First</h3>
-          <p>Drag and rotate boards, ramps, curves, springs, sticky panels, fans, switches, and portals before the run begins.</p>
-        </article>
-        <article class="card">
-          <h3>Drop the Ball</h3>
-          <p>Release the ball and watch gravity, collisions, friction, and bounce test your layout.</p>
-        </article>
-        <article class="card">
-          <h3>Refine the Route</h3>
-          <p>Retry quickly, keep your last layout, and adjust the key angle or position until the ball reaches the goal.</p>
-        </article>
+    <section>
+      <h2>About the Game</h2>
+      <p>Color Drift Gate is a portrait color puzzle built for quick, readable play. Each level gives you an irregular board of colored blocks and four directional gates. Swipe toward a gate to push the board in that direction and absorb matching edge blocks.</p>
+      <p>The challenge comes from choosing the right direction at the right moment. Later levels add more blocks, more colors, and tighter timers while keeping the core rule easy to understand.</p>
+      <div class="gate-row" aria-label="Color gate examples">
+        <div class="gate blue">Swipe Up</div>
+        <div class="gate green">Swipe Right</div>
+        <div class="gate yellow">Swipe Down</div>
+        <div class="gate red">Swipe Left</div>
       </div>
     </section>
 
-    <section aria-labelledby="features-title">
-      <h2 id="features-title">Features</h2>
+    <section>
+      <h2>Features</h2>
       <ul>
-        <li>50 levels with a steady mechanical puzzle progression.</li>
-        <li>Free component placement and rotation before each run.</li>
-        <li>Star goals for successful and efficient solutions.</li>
-        <li>A playful cartoon toy-lab theme built with SpriteKit.</li>
-        <li>Offline gameplay with local progress storage.</li>
+        <li>Swipe-based color clearing with directional gates.</li>
+        <li>Irregular puzzle boards with empty spaces and edge-focused decisions.</li>
+        <li>Timed levels with star ratings based on remaining time.</li>
+        <li>Offline progress saving for completed levels and best stars.</li>
+        <li>Music and sound controls for comfortable play.</li>
+        <li>Designed for iPhone and iPad in portrait orientation.</li>
       </ul>
     </section>
 
-    <section aria-labelledby="support-title">
-      <h2 id="support-title">Support</h2>
-      <p>For support, feedback, or privacy questions, contact the developer account at <a href="mailto:hengbozail@163.com">hengbozail@163.com</a>.</p>
-      <p><a href="privacy.html">Read the Privacy Policy</a></p>
+    <section>
+      <h2>Support</h2>
+      <p>For support, privacy questions, or App Store review contact, email <a href="mailto:hengbozail@163.com">hengbozail@163.com</a>.</p>
     </section>
-
-    <footer>
-      <p>(c) 2026 hengbozail@163.com. All rights reserved.</p>
-    </footer>
   </main>
+
+  <footer>
+    <p>Copyright (c) 2026 hengbozail@163.com. All rights reserved.</p>
+  </footer>
 </body>
 </html>
